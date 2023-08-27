@@ -13,22 +13,53 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/hello', function () {
+//     return response('<h1>hello</h1>');
+// });
+
+
+// Route::get('/post/{id}', function ($id) {
+
+//     // dd($id);
+//     // ddd($id);
+//     return response('Post'. $id);
+// })->where('id', '[0-9]+');
+// // /api/posts
+// Route::get('/posts', function() {
+//     return response()->json(['posts'=>[['title'=>'post1']]]);
+// });
+
+
+// Route::get('/post/{id}', function ($id) {
+
+//     // dd($id);
+//     // ddd($id);
+//     return response('Post'. $id);
+// })->where('id', '[0-9]+');
+// // /api/posts
+// Route::get('/posts', function() {
+//     return response()->json(['posts'=>[['title'=>'post1']]]);
+// });
+
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('listings', ['heading' => 'Latest Listings', 
+'listings' => [
+    [
+        'id' => 1, 
+        'title' => 'Listing1',
+        'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ut!',
+    ],    
+    [
+        'id' => 2, 
+        'title' => 'Listing2',
+        'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, ut!',
+    ],
+]
+]);
 
-Route::get('/hello', function () {
-    return response('<h1>hello</h1>');
-});
-
-
-Route::get('/post/{id}', function ($id) {
-
-    // dd($id);
-    // ddd($id);
-    return response('Post'. $id);
-})->where('id', '[0-9]+');
-// /api/posts
-Route::get('/posts', function() {
-    return response()->json(['posts'=>[['title'=>'post1']]]);
 });
