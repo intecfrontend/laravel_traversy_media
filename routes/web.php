@@ -28,3 +28,7 @@ Route::get('/post/{id}', function ($id) {
     // ddd($id);
     return response('Post'. $id);
 })->where('id', '[0-9]+');
+// /api/posts
+Route::get('/posts', function() {
+    return response()->json(['posts'=>[['title'=>'post1']]]);
+});
